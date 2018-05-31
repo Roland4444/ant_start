@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<project name="HelloWorld" default="hello">
+ <target name="build">
+        <mkdir dir="bin"/>
+        <javac destdir="bin" includeantruntime="false">
+            <src path="src"/>
+        </javac>
+</target>
+<target name="jar" depends="build" >
+    <jar destfile="myapp.jar" basedir="bin" >
+        <manifest>
+            <attribute name="Main-Class" 
+value="roland.co.uk.HelloWorld" />
+        </manifest>
+    </jar>
+</target>
+<target name="clean">
+	<delete dir="bin"/>
+	<delete file="myapp.jar"/>
+</target>
+</project>
